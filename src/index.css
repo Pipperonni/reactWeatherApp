@@ -5,9 +5,258 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-image: url('/public/images/weather.jpg');
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+
+/* Start of Sign In View */
+:root{
+  --gradient: linear-gradient(
+    45deg,
+    rgb(13, 134, 7),
+    rgb(33, 167, 26),
+    rgb(26, 167, 101),
+    rgb(26, 167, 158),
+    rgb(0, 191, 255)
+  )
+}
+
+.signInView{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin-top: 12rem;
+  height: 50rem;
+}
+
+.signInLabel{
+  font-size: 5rem;
+  color: transparent;
+  background-image: linear-gradient(45deg, yellow, rgb(13, 228, 210));
+  background-clip: text;
+}
+
+@keyframes btn-animation{
+  0% {background-position: left;}
+  100% {background-position: right;}
+}
+
+.logInBtn{
+  cursor: pointer;
+  color: rgb(226, 201, 171);
+  width: 10rem;
+  height: 4rem;
+  border: 2px solid rgb(15, 159, 104);
+  border-radius: 2rem;
+  font-size: 2rem;
+  background-image: var(--gradient);
+  background-size: 300%;
+  animation: btn-animation 5s infinite alternate;
+}
+
+/* End of Sign In View */
+
+/* Start of Profile view */
+
+.profileBox{
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  height: 73rem;
+  background-attachment: fixed;
+  background-image: url('/public/images/profilebackjpg.jpg');
+}
+
+.logOutBox{
+  margin-top: 4rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+  width: 30rem;
+  height: 12rem;
+}
+
+.logOutBtn{
+  cursor: pointer;
+  color: rgb(226, 201, 171);
+  width: 10rem;
+  height: 4rem;
+  border: 2px solid rgb(15, 159, 104);
+  border-radius: 2rem;
+  font-size: 2rem;
+  background-image: var(--gradient);
+  background-size: 300%;
+  animation: btn-animation 5s infinite alternate;
+}
+
+.userName{
+  font-size: 2rem;
+  color: beige;
+}
+
+.searchBox{
+  display: flex;
+  gap: 2rem;
+}
+
+.inputForm{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 30rem;
+  height: 4rem;
+}
+
+input[type=text] {
+  text-align: center;
+}
+
+.inputCity{
+  width: 12rem;
+  height: 3rem;
+  font-size: 26px;
+  border-radius: 1rem;
+  text-align: center;
+
+}
+
+.addCityBtn{
+  cursor: pointer;
+  border-radius: 1rem;
+  height: 3rem;
+  font-size: 20px;
+  color: beige;
+  background-color: rgb(17, 144, 102);
+}
+
+.cityBox{
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-top: 4rem;
+  width: 100%;
+  height: 100%;
+}
+
+.city{
+  margin: 1rem;
+  width: 15rem;
+  height: 10rem;
+  background-color: rgb(88, 80, 82);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  border-radius: 1rem;
+  opacity: .9;
+  flex-wrap: wrap;
+}
+
+.cityName{
+  font-size: 2rem;
+  color: beige;
+  line-height: 0;
+}
+
+.getWeather{
+  text-decoration: none;
+  font-size: 18px;
+  color: aliceblue;
+}
+
+.getWeatherBox{
+  width: 8rem;
+  height: 3rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(45, 45, 181);
+  border-radius: 1rem;
+}
+
+/* End of Profile View */
+
+/* Start of WeatherDetails View */
+
+.redirectLinkBox{
+  margin-top: 5rem;
+  background-color: rgb(26, 175, 39);
+  height: 2rem;
+  margin-left: 5rem;
+  width: 10rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 20px;
+}
+
+.redirectLink{
+  text-decoration: none;
+  font-size: 20px;
+  color: beige;
+}
+
+.weatherInfoMainBox{
+  margin-top: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+
+
+.weatherInfoCityTitle{
+  font-size: 3rem;
+  line-height: 0;
+  color: antiquewhite;
+}
+
+.weatherInfoInnerBox{
+  width: 100%;
+  margin: 10rem;
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.weatherInfoBoxes{
+  background-color: brown;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 25rem;
+  margin: 6rem;
+  opacity: .9;
+  border-radius: 1rem;
+}
+
+.boxTitle{
+  font-size: 2rem;
+  line-height: 0;
+  color: antiquewhite;
+}
+
+.infoBox{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2rem;
+  line-height: 0;
+  background-color: rgb(181, 233, 233);
+  height: 8rem;
+  opacity: .9;
+}
+
