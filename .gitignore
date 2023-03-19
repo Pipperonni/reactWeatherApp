@@ -12,7 +12,6 @@
 /build
 
 # misc
-credentials.js
 .env
 .DS_Store
 .env.local

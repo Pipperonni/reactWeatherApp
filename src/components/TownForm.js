@@ -21,7 +21,7 @@ export default function TownForm(){
             <div>
             <input 
                 className="inputCity"
-                placeholder="      Enter City"
+                placeholder="Enter City"
                 type="text" 
                 name="town" 
                 id="town"
