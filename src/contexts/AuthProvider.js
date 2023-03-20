@@ -6,6 +6,7 @@ import { async } from "@firebase/util";
 export const AuthContext = createContext()
 
 export const AuthProvider = function(props){
+    const [userId, setUserId] = useState([])
 
     const [user, setUser] = useState({
         loggedIn: false,
@@ -30,9 +31,11 @@ export const AuthProvider = function(props){
 
     useEffect(() =>{
         onAuthStateChanged(auth, (userData) => {
+            setUserId(userData.uid)
             if (userData){
                 userData.loggedIn = true
                 userData.checked = true
+        console.log(userData.uid)        
         setUser(userData)
             }else{
                 setUser({
@@ -42,11 +45,13 @@ export const AuthProvider = function(props){
             }
         })
     }, [])
-
+    
     const value = {
         login,
         logout,
-        user
+        user,
+        userId
+
     }
 
     return(

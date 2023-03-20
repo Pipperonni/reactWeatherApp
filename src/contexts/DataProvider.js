@@ -11,6 +11,8 @@ export const DataProvider = function(props){
     const API_KEY = process.env.REACT_APP_WEATHER_API_KEY
     const [data, setData] = useState({})
     const { user } = useContext(AuthContext)
+    
+    
     const db = getFirestore()
     
     useEffect(() => {
@@ -26,9 +28,27 @@ export const DataProvider = function(props){
                 })
             })
             setTowns(loadedPosts)
-        }
+            getCitys()
+            console.log(getCitys())
+        }   
         getTowns()
-    }, [])
+    }, [])       
+    
+    const { userId } = useContext(AuthContext)
+    console.log(getCitys())
+    
+    function getCitys(){
+        const usersCities = []
+        for ( let i =0; i<towns.length-1; i++){
+            console.log(i)
+            if (towns[i].uid == userId){
+                usersCities.push(towns[i])
+                console.log(towns[i].uid)
+            }
+        }
+        
+        return usersCities
+    }
 
     async function getTown(uid, id){
         const docRef = doc(db, 'users', uid, 'cities', id);
@@ -61,7 +81,9 @@ export const DataProvider = function(props){
         towns,
         getTown,
         addTown,
-        data
+        data,
+        getCitys
+        
         
     }
     return(

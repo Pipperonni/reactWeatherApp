@@ -5,7 +5,7 @@ import TownForm from '../components/TownForm'
 import { AuthContext } from '../contexts/AuthProvider';
 
 export default function Home(){
-    const { towns } = useContext(DataContext)
+    const { getCitys } = useContext(DataContext)
     const { user } = useContext(AuthContext)
     const { login, logout } = useContext(AuthContext)
     
@@ -27,7 +27,7 @@ export default function Home(){
                     }
                     
                     <div id='cityBox' className="cityBox">
-                        {towns.map((city) => <CitiesWeather city={city} key={city.id}/>)}
+                        {getCitys().map((city) => <CitiesWeather city={city} key={city.id}/>)}
                     </div>
                 </> :
                 <>
