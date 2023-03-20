@@ -31,11 +31,10 @@ export const AuthProvider = function(props){
 
     useEffect(() =>{
         onAuthStateChanged(auth, (userData) => {
-            setUserId(userData.uid)
             if (userData){
                 userData.loggedIn = true
-                userData.checked = true
-        console.log(userData.uid)        
+                userData.checked = true 
+                setUserId(userData.uid)       
         setUser(userData)
             }else{
                 setUser({
